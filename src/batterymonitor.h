@@ -20,6 +20,11 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE.
 */
+
+
+///@file batterymonitor.h
+///@brief Battery monitoring class to read battery voltage and level.
+
 #ifndef SLIMEVR_BATTERYMONITOR_H_
 #define SLIMEVR_BATTERYMONITOR_H_
 
@@ -70,12 +75,21 @@
 #define ADCMultiplier 3.3 / 1023.0 * 14.2 / 9.1
 #endif
 
+/// @class BatteryMonitor
+/// @brief Monitors the voltage of the battery and reports the level in a percentage.
 class BatteryMonitor {
 public:
+    /// @brief Sets up the battery monitor.
+    /// @return Description of the return value.
 	void Setup();
 	void Loop();
 
+    /// @brief Gets the current battery voltage.
+    /// @return Voltage in volts.
 	float getVoltage() const { return voltage; }
+	
+    /// @brief Gets the current battery level as a percentage.
+    /// @return Battery level in percentage.
 	float getLevel() const { return level; }
 
 private:
