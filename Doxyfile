@@ -11,10 +11,14 @@ GENERATE_XML           = NO
 QUIET                  = YES
 
 # Input settings
-INPUT                  = src include
+INPUT                  = ./src \
+                         ./docs \
+                         ./README.md
 RECURSIVE              = YES
 FILE_PATTERNS          = *.cpp *.hpp *.h
-EXCLUDE_PATTERNS       = */test/* */build/*
+EXCLUDE_PATTERNS       = */test/* \
+                         */build/*  \
+                         */lib/*
 SOURCE_BROWSER         = YES
 INLINE_SOURCES         = NO
 

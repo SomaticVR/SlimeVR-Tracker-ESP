@@ -80,8 +80,8 @@
 class BatteryMonitor {
 public:
     /// @brief Sets up the battery monitor.
-    /// @return Description of the return value.
 	void Setup();
+    /// @brief Periodically sample the battery voltage and level.
 	void Loop();
 
     /// @brief Gets the current battery voltage.
@@ -93,6 +93,8 @@ public:
 	float getLevel() const { return level; }
 
 private:
+	/// @var last_battery_sample
+	/// @brief Timestamp of the last battery sample in milliseconds since startup.
 	unsigned long last_battery_sample = 0;
 #if BATTERY_MONITOR == BAT_MCP3021 || BATTERY_MONITOR == BAT_INTERNAL_MCP3021
 	uint8_t address = 0;
