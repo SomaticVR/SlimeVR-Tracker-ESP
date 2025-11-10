@@ -27,9 +27,23 @@
 
 class TPSCounter {
 public:
+	/**
+ 	* @brief Gets the current time in ms and sets that to _lastAverageUpdate and _lastUpdate.
+	* Also resets sets _tps, _averagedTps, and _averageUpdatesCounter by assigning 0.
+ 	*/
 	void reset();
+	/**
+ 	* @brief Checks once every ~1 second to update the TPS since last average calculation.  
+	* Increments _averageUpdatesCounter while running.
+ 	*/
 	void update();
+	/**
+ 	* @return _averagedTps calculated in update()
+ 	*/
 	float getAveragedTPS();
+	/**
+ 	* @return _tps calculated in update(), 1000ms / the time since last update
+ 	*/
 	float getTPS();
 
 private:
