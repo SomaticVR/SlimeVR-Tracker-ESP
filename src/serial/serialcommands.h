@@ -27,17 +27,17 @@
 namespace SerialCommands {
 /**
  * @brief Unclear what exactly the function from <CmdCallback.hpp> is doing. Need
- * to investigate that documentation.
+ * to investigate that documentation. [Is it this?](https://github.com/pvizeli/CmdParser/blob/master/src/CmdCallback.hpp)
  */
 void setUp();
 /**
  * @brief Calls upon 'cmdCallback' class method updateCmdProcessing(&cmdParser, 
- *  &cmdBuffer, &Serial), need to see class to understand this
+ *  &cmdBuffer, &Serial), need to see class to understand this.
  */
 void update();
 /**
  * @brief Calls upon 'Logger' class method info(const char* str, ...) from 
- * "logging/Logger.h" which takes variable number of strings and ints to print
+ * "logging/Logger.h" which takes variable number of strings and ints to print.
  */
 void printState();
 }  // namespace SerialCommands
